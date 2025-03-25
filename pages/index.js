@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import Head from "next/head";
+import Link from "next/link";
+import Image from "next/image";
 import Navbar from "../components/Navbar";
 
 export default function Home() {
@@ -57,14 +59,20 @@ export default function Home() {
           <p>
             &quot;I&apos;m a B.Tech IT final-year student with a strong passion for web development. I have experience building scalable applications using modern tech stacks, including Next.js,MongoDB, and Express.js. My goal is to craft seamless user experiences with efficient and maintainable code.&quot;
           </p>
-          <a href="/Projects" className="neon-button">
-            View My Work
-          </a>
+          <Link href="/Projects" className="neon-button">
+             View My Work
+          </Link>
         </div>
 
         {/* ✅ Profile Image */}
         <div className="home-image">
-          <img src="/profile.png.png" alt="My Profile" className="profile-pic" />
+        <Image
+              src="/profile.png.png"
+              alt="My Profile"
+              width={200}  // Set appropriate width & height
+              height={200}
+              className="profile-pic"
+              />
         </div>
       </header>
 
