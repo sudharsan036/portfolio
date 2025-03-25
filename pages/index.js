@@ -2,20 +2,20 @@ import { useEffect } from "react";
 import Head from "next/head";
 import Navbar from "../components/Navbar";
 
-
 export default function Home() {
   useEffect(() => {
+    // Scroll effect observer
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("active"); // Apply the scroll effect
+            entry.target.classList.add("active");
           } else {
-            entry.target.classList.remove("active"); // Remove effect when out of view
+            entry.target.classList.remove("active");
           }
         });
       },
-      { threshold: 0.3 } // 30% of the element must be visible
+      { threshold: 0.3 }
     );
 
     const sections = document.querySelectorAll(".scroll-effect");
@@ -26,12 +26,15 @@ export default function Home() {
     };
   }, []);
 
-
-    // Remove cursor after typing effect completes
+  useEffect(() => {
+    // Ensure typewriter animation works after component mounts
     setTimeout(() => {
-        document.getElementById("typewriter-text").classList.add("done");
-    }, 3000); // Matches animation duration
-
+      const typewriterText = document.getElementById("typewriter-text");
+      if (typewriterText) {
+        typewriterText.classList.add("done");
+      }
+    }, 3000);
+  }, []);
 
   return (
     <div className="home-container">
@@ -44,22 +47,24 @@ export default function Home() {
       {/* ✅ Hero Section */}
       <header className="home-header scroll-effect">
         <div className="home-content">
-          <h1 className="neon-text">Hello, I'm Your Sudharsan</h1>
-          <h2 class="typewriter-container" id="typewriter-text">I'M A PASSIONATE WEB DEVELOPER</h2>
-          <br></br>
+          <h1 className="neon-text">Hello, I&apos;m Sudharsan</h1>
+          <h2 className="typewriter-container" id="typewriter-text">
+            I&apos;M A PASSIONATE WEB DEVELOPER
+          </h2>
           <p>
             I specialize in building modern, user-friendly, and high-performance web applications.
           </p>
           <p>
-          "I’m a B.Tech IT final-year student with a strong passion for web development. I have experience building scalable applications using modern tech stacks, including Next.js, Laravel, MongoDB, and Express.js. My goal is to craft seamless user experiences with efficient and maintainable code."
+            &quot;I&apos;m a B.Tech IT final-year student with a strong passion for web development. I have experience building scalable applications using modern tech stacks, including Next.js,MongoDB, and Express.js. My goal is to craft seamless user experiences with efficient and maintainable code.&quot;
           </p>
-          <a href="/Projects" className="neon-button">View My Work</a>
+          <a href="/Projects" className="neon-button">
+            View My Work
+          </a>
         </div>
 
         {/* ✅ Profile Image */}
         <div className="home-image">
-        <img src="/profile.png.png" alt="My Profile" className="profile-pic" />
-
+          <img src="/profile.png.png" alt="My Profile" className="profile-pic" />
         </div>
       </header>
 
@@ -67,8 +72,11 @@ export default function Home() {
       <section className="home-about scroll-effect">
         <h2 className="neon-text">About Me</h2>
         <p>
-          I'm a <strong>frontend web developer</strong> with expertise in <strong>HTML, CSS, JavaScript, and Next.js</strong>.
-          My focus is on <strong>creating visually appealing, responsive, and high-performance web applications</strong>.
+          I&apos;m a <strong>frontend web developer</strong> with expertise in{" "}
+          <strong>HTML, CSS, JavaScript, and Next.js</strong>. My focus is on{" "}
+          <strong>
+            creating visually appealing, responsive, and high-performance web applications
+          </strong>.
         </p>
       </section>
 
@@ -77,7 +85,7 @@ export default function Home() {
         <h2 className="neon-text">My Skills</h2>
         <div className="skills-grid">
           <div className="skill-item">✨ HTML, CSS, JavaScript</div>
-          <div className="skill-item">⚡ React & Next.js</div>
+          <div className="skill-item">⚡ React &amp; Next.js</div>
           <div className="skill-item">🛠 Node.js, Express.js, MongoDB</div>
           <div className="skill-item">💳 Payment Gateway Integration</div>
           <div className="skill-item">🚀 Event Discovery Algorithms</div>
@@ -94,16 +102,29 @@ export default function Home() {
           </div>
           <div className="project-card">
             <h3>eCommerce Website</h3>
-            <p>🛒 A fully functional online store integrated with <strong>Razorpay payment gateway</strong>.</p>
+            <p>
+              🛒 A fully functional online store integrated with <strong>Razorpay payment gateway</strong>.
+            </p>
           </div>
         </div>
       </section>
 
       {/* ✅ Contact Section */}
       <section className="home-contact scroll-effect">
-        <h2 className="neon-text">Let's Connect</h2>
-        <p>📧 Email: <a href="mailto:your.email@example.com">rsansudha798@gmail.com</a></p>
-        <p>📱 LinkedIn: <a href="www.linkedin.com/in/sudharsanrofficial" target="_blank">www.linkedin.com/in/sudharsanrofficial</a></p>
+        <h2 className="neon-text">Let&apos;s Connect</h2>
+        <p>
+          📧 Email: <a href="mailto:rsansudha798@gmail.com">rsansudha798@gmail.com</a>
+        </p>
+        <p>
+          📱 LinkedIn:{" "}
+          <a
+            href="https://www.linkedin.com/in/sudharsanrofficial"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            www.linkedin.com/in/sudharsanrofficial
+          </a>
+        </p>
       </section>
     </div>
   );

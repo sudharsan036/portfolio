@@ -1,6 +1,6 @@
 import { useEffect } from "react";
+import Head from "next/head";
 import Navbar from "../components/Navbar";
-
 
 export default function About() {
   useEffect(() => {
@@ -27,6 +27,9 @@ export default function About() {
 
   return (
     <div className="about-container">
+      <Head>
+        <title>About Me</title>
+      </Head>
       <Navbar />
 
       <header className="about-header">
@@ -38,7 +41,7 @@ export default function About() {
         <div className="about-card">
           <h2>Who Am I?</h2>
           <p>
-            Hi! I'm a <strong>web developer</strong> with expertise in <strong>HTML, CSS, JavaScript, and Next.js</strong>.
+            Hi! I&apos;m a <strong>web developer</strong> with expertise in <strong>HTML, CSS, JavaScript, and Next.js</strong>.
             I love building user-friendly and modern web applications.
           </p>
         </div>
@@ -54,22 +57,22 @@ export default function About() {
         <div className="about-card">
           <h2>What I Do</h2>
           <ul>
-            <li>🔹 Build modern web applications with <strong>Next.js & React</strong></li>
+            <li>🔹 Build modern web applications with <strong>Next.js &amp; React</strong></li>
             <li>🔹 Design responsive and interactive UI</li>
             <li>🔹 Work with <strong>Node.js, Express.js, and MongoDB</strong></li>
-            <li>🔹 Implement <strong>payment gateways & event discovery algorithms</strong></li>
+            <li>🔹 Implement <strong>payment gateways &amp; event discovery algorithms</strong></li>
           </ul>
         </div>
       </section>
 
       <section className="about-contact">
-        <h2>Let's Connect</h2>
+        <h2>Let&apos;s Connect</h2>
         <p>📧 Feel free to reach out via email:  
           <strong className="email"> rsansudha798@gmail.com </strong>
         </p>
         
         <p>🔗 Connect with me on LinkedIn: 
-          <a href="www.linkedin.com/in/sudharsanrofficial" 
+          <a href="https://www.linkedin.com/in/sudharsanrofficial" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="linkedin-link">
