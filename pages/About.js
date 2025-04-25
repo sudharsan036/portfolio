@@ -79,6 +79,11 @@ export default function About() {
             www.linkedin.com/in/sudharsanrofficial <i className="fab fa-linkedin"></i>
           </a>
         </p>
+        <p>📥 Download CV:
+         <a href="/SUDHARSAN RESUME.pdf" download className="download-button">
+             Click Here to Download
+         </a>
+        </p>
       </section>
     </div>
   );

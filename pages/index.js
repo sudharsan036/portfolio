@@ -133,6 +133,11 @@ export default function Home() {
             www.linkedin.com/in/sudharsanrofficial
           </a>
         </p>
+        <p>📥 Download CV: <a href="/SUDHARSAN RESUME.pdf" download className="download-button">
+                Click Here to Download
+              </a>
+        </p>
+
       </section>
     </div>
   );

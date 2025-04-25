@@ -7,7 +7,7 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <h2 className="logo">My Portfolio</h2>
+      <h2 className="logo">SUDHARSAN</h2>
 
       {/* 🍔 Hamburger Menu */}
       <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
